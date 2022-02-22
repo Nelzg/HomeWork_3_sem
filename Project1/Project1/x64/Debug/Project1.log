@@ -1,0 +1,18 @@
+﻿  Source.cpp
+D:\PROJECTS INFA\Project1\Project1\Vector2.h(92,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\PROJECTS INFA\Project1\Project1\Vector2.h(93,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\PROJECTS INFA\Project1\Project1\Vector2.h(100,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\PROJECTS INFA\Project1\Project1\Vector2.h(101,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\PROJECTS INFA\Project1\Project1\Source.cpp(26,33): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\PROJECTS INFA\Project1\Project1\Source.cpp(27,40): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\PROJECTS INFA\Project1\Project1\Source.cpp(27,80): warning C4305: 'argument': truncation from 'double' to 'float'
+  Vector2.cpp
+D:\PROJECTS INFA\Project1\Project1\Vector2.h(92,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\PROJECTS INFA\Project1\Project1\Vector2.h(93,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\PROJECTS INFA\Project1\Project1\Vector2.h(100,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\PROJECTS INFA\Project1\Project1\Vector2.h(101,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  LINK : D:\PROJECTS INFA\Project1\x64\Debug\Project1.exe not found or not built by the last incremental link; performing full link
+Source.obj : error LNK2005: "class std::basic_istream<char,struct std::char_traits<char> > & __cdecl operator>>(class std::basic_istream<char,struct std::char_traits<char> > &,struct Vector2 &)" (??5@YAAEAV?$basic_istream@DU?$char_traits@D@std@@@std@@AEAV01@AEAUVector2@@@Z) already defined in Vector2.obj
+Source.obj : error LNK2005: "class std::basic_ostream<char,struct std::char_traits<char> > const & __cdecl operator<<(class std::basic_ostream<char,struct std::char_traits<char> > &,struct Vector2 const &)" (??6@YAAEBV?$basic_ostream@DU?$char_traits@D@std@@@std@@AEAV01@AEBUVector2@@@Z) already defined in Vector2.obj
+D:\PROJECTS INFA\Project1\x64\Debug\Project1.exe : fatal error LNK1169: one or more multiply defined symbols found
