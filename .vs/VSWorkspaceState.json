@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Project1",
+    "\\Project1\\Project1",
+    "\\ReadFileAndCountWords"
   ],
+  "SelectedNode": "\\Project1\\Project1\\Vector2.h",
   "PreviewInSolutionExplorer": false
 }

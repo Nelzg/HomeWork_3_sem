@@ -12,8 +12,9 @@ struct Vector2
 		y = _y;
 	}
 
-	float len();
-	float len(float x);
+	float len() {
+		return sqrt(x * x + y * y);
+	}
 
 	Vector2 operator+(const Vector2& other) const
 	{
@@ -47,9 +48,7 @@ struct Vector2
 
 	float operator*(const Vector2& other) const
 	{
-		float result;
-		result = x * other.x + y * other.y;
-		return result;
+		return x * other.x + y * other.y;
 	}
 
 	Vector2 operator*(float c) const
@@ -67,11 +66,9 @@ struct Vector2
 
 	float operator^(const Vector2& other) const
 	{
-		float result;
-		result = sqrt((x * other.y)* (x * other.y) + (y * other.x)* (x * other.y));
-		return result;
+		return sqrt((x * other.y) * (x * other.y) + (y * other.x) * (x * other.y));
 	}
-
+	
 	Vector2 norm()
 	{
 		Vector2 result;
@@ -103,7 +100,15 @@ struct Vector2
 		return *this;
 	}
 
+	Vector2 perpendicular()
+	{
+		return rotate(270);
+	}
 	
+	Vector2 operator-()
+	{
+		return rotate(180);
+	}
 };
 
 const std::ostream& operator<<(std::ostream& stream, const Vector2& other) {
