@@ -1,2 +1,48 @@
 ﻿  main.cpp
-  testSFML.vcxproj -> D:\PROJECTS INFA\Game Project\bin\testSFMLDebug.exe
+D:\PROJECTS_INFA\HomeWork_3_sem\Game Project\src\Vector2.h(88,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\PROJECTS_INFA\HomeWork_3_sem\Game Project\src\Vector2.h(96,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\PROJECTS_INFA\HomeWork_3_sem\Game Project\src\main.cpp(33,15): warning C4244: 'initializing': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\PROJECTS_INFA\HomeWork_3_sem\Game Project\src\main.cpp(34,15): warning C4244: 'initializing': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\PROJECTS_INFA\HomeWork_3_sem\Game Project\src\main.cpp(53,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\PROJECTS_INFA\HomeWork_3_sem\Game Project\src\main.cpp(53,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\PROJECTS_INFA\HomeWork_3_sem\Game Project\src\main.cpp(58,94): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+D:\PROJECTS_INFA\HomeWork_3_sem\Game Project\src\main.cpp(58,60): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+D:\PROJECTS_INFA\HomeWork_3_sem\Game Project\src\main.cpp(64,94): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+D:\PROJECTS_INFA\HomeWork_3_sem\Game Project\src\main.cpp(64,60): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+D:\PROJECTS_INFA\HomeWork_3_sem\Game Project\src\main.cpp(75,92): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\PROJECTS_INFA\HomeWork_3_sem\Game Project\src\main.cpp(78,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\PROJECTS_INFA\HomeWork_3_sem\Game Project\src\main.cpp(81,97): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+D:\PROJECTS_INFA\HomeWork_3_sem\Game Project\src\main.cpp(81,63): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+  testSFML.vcxproj -> D:\PROJECTS_INFA\HomeWork_3_sem\Game Project\bin\testSFMLDebug.exe

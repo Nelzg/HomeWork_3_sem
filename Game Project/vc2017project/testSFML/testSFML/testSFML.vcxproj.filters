@@ -9,5 +9,28 @@
     <ClCompile Include="..\..\..\src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\Vect.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Ball.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="LaserBeam.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\Vector2.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Ball.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialPoint.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="LaserBeam.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
