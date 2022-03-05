@@ -1,9 +1,0 @@
-﻿  Source.cpp
-D:\PROJECTS INFA\HomeWork_3_sem\Project1\Project1\Vector2.h(97,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\PROJECTS INFA\HomeWork_3_sem\Project1\Project1\Vector2.h(98,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\PROJECTS INFA\HomeWork_3_sem\Project1\Project1\Vector2.h(105,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\PROJECTS INFA\HomeWork_3_sem\Project1\Project1\Vector2.h(106,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\PROJECTS INFA\HomeWork_3_sem\Project1\Project1\Source.cpp(26,33): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\PROJECTS INFA\HomeWork_3_sem\Project1\Project1\Source.cpp(27,40): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\PROJECTS INFA\HomeWork_3_sem\Project1\Project1\Source.cpp(27,80): warning C4305: 'argument': truncation from 'double' to 'float'
-  Project1.vcxproj -> D:\PROJECTS INFA\HomeWork_3_sem\Project1\x64\Debug\Project1.exe
