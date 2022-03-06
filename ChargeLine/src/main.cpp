@@ -6,7 +6,7 @@
 #define N 10
 #define X0 900
 #define Y0 900
-#define n 5
+#define n 20
 #define mul 1
 
 int main()
