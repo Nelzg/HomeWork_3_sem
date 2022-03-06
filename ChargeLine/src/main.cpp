@@ -37,7 +37,7 @@ int main()
 
         sf::Time time = clock.getElapsedTime();
         int j = 0;
-        if ((sf::Mouse::isButtonPressed(sf::Mouse::Left)) && (j == 0)) {
+        if ((sf::Mouse::isButtonPressed(sf::Mouse::Left))) {
             p.position = Vector2(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y);
             p.velocity = Vector2(0, 0);
             p.mass = 1.0f;
@@ -49,7 +49,7 @@ int main()
             particles.push_back(p);
             j++;
         }
-        if ((sf::Mouse::isButtonPressed(sf::Mouse::Right)) && (j == 0)) {
+        if (sf::Mouse::isButtonPressed(sf::Mouse::Right)) {
             p.position = Vector2(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y);
             p.velocity = Vector2(0, 0);
             p.mass = -1.0f;
@@ -71,6 +71,7 @@ int main()
                         
                     }
                     sf::RectangleShape line(sf::Vector2f(n, 1));
+                    line.setOrigin(n / 2, 0);
                     if (e.y < 0)
                     {
                         
@@ -80,6 +81,7 @@ int main()
                         line.rotate(acos(e.norm() * Vector2(1, 0)) * 180 / M_PI);
                     }
                     line.setPosition(i * n, j * n);
+                    
                     window.draw(line);
 
                 }

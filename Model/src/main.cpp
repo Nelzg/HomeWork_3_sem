@@ -3,6 +3,15 @@
 #include "../vc2017project/testSFML/testSFML/MaterialPoint.h"
 #include <vector>
 #include "../vc2017project/testSFML/testSFML/Ball.h"
+#include <random>
+#include "windows.h"
+
+int GetRandomNumber(int min, int max)
+{
+    srand(time(NULL));
+    int num = min + rand() % (max - min + 1);
+    return num;
+}
 
 int main()
 {
@@ -29,43 +38,45 @@ int main()
         window.clear(sf::Color::Red);
 
         sf::Time time = clock.getElapsedTime();
-        /*
-        sf::CircleShape circle2(50/(2*tan(360/40)));
-
-        circle2.setPosition(200 + 5 * time.asSeconds(), 200);
-
-        circle2.setFillColor(sf::Color(150, 50, 250));
-        circle2.setOutlineThickness(3);
-        circle2.setOutlineColor(sf::Color(300, 100, 100));
-        window.draw(circle2);
-        */
-
-
-        //circle1.setPosition(100, 100);
-
-        //circle1.setFillColor(sf::Color(150, 50, 250));
-        
 
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
             p.position = Vector2(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y);
-            p.velocity = Vector2(1, 1);
+            p.velocity = Vector2(0.01, 0.01);
             p.mass = 1.0f;
-            p.radius = 10;
+            p.radius = 50;
             p.circle.setRadius(p.radius);
+            p.circle.setOrigin(p.radius/2, p.radius/2);
             p.circle.setPosition(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y);
             particles.push_back(p);
+            Sleep(5000);
         }
-
-        for (int i = 0; i < particles.size()/2 + 1; i++) {
-            for (int j = 0; j < particles.size()/2 + 1; j++) {
-               // if ((particles[i].radius + particles[j].radius) == (particles[i].position - particles[j].position).len()) {
-                    
-                //}
+        
+        for (int i = 0; i < particles.size(); i++) {
+            for (int j = 0; j < particles.size(); j++) {
+                if ((particles[i].radius + particles[j].radius) > (particles[j].position - particles[i].position).len()) {
+                    if ((particles[j].velocity - particles[i].velocity) * (particles[j].position - particles[i].position) < 0) {
+                        Vector2 dp = ((particles[j].position - particles[i].position).norm() * ((particles[j].velocity - particles[i].velocity) * (particles[j].position - particles[i].position).norm() / (1 / particles[i].mass + 1 / particles[j].mass)) * 2);
+                        
+                        particles[i].velocity += dp / particles[i].mass;
+                        particles[j].velocity -= dp / particles[j].mass;
+                    }
+                }
+            }
+        }
+        
+        for (int i = 0; i < particles.size(); i++) {
+            Vector2 prevPos = particles[i].position;
+            if (((750 - particles[i].position.x) <= particles[i].radius)||((particles[i].position.x) <= particles[i].radius)) {
+                particles[i].velocity.x = -particles[i].velocity.x;
+            }
+            if (((550 - particles[i].position.y) <= particles[i].radius) || ((particles[i].position.y) <= particles[i].radius)) {
+                particles[i].velocity.y = -particles[i].velocity.y;
             }
         }
 
+
         for (int i = 0; i < particles.size(); i++) {
-            particles[i].UpdatePosition(1);
+            particles[i].UpdatePosition(0.1);
             particles[i].circle.setPosition(particles[i].position.x, particles[i].position.y);
             window.draw(particles[i].circle);
         }
