@@ -41,14 +41,14 @@ int main()
 
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
             p.position = Vector2(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y);
-            p.velocity = Vector2(0.01, 0.01);
+            p.velocity = Vector2(GetRandomNumber(-2,2), GetRandomNumber(-2,2));
             p.mass = 1.0f;
             p.radius = 50;
             p.circle.setRadius(p.radius);
             p.circle.setOrigin(p.radius/2, p.radius/2);
             p.circle.setPosition(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y);
             particles.push_back(p);
-            Sleep(5000);
+            Sleep(2000);
         }
         
         for (int i = 0; i < particles.size(); i++) {
@@ -56,7 +56,6 @@ int main()
                 if ((particles[i].radius + particles[j].radius) > (particles[j].position - particles[i].position).len()) {
                     if ((particles[j].velocity - particles[i].velocity) * (particles[j].position - particles[i].position) < 0) {
                         Vector2 dp = ((particles[j].position - particles[i].position).norm() * ((particles[j].velocity - particles[i].velocity) * (particles[j].position - particles[i].position).norm() / (1 / particles[i].mass + 1 / particles[j].mass)) * 2);
-                        
                         particles[i].velocity += dp / particles[i].mass;
                         particles[j].velocity -= dp / particles[j].mass;
                     }
