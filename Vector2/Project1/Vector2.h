@@ -85,7 +85,7 @@ struct Vector2
 	Vector2 rotate(float fi) 
 	{
 		Vector2 result;
-		double di = fi * M_PI / 180;
+		float di = fi * M_PI / 180;
 		result.x = x * cos(di) - y * sin(di);
 		result.y = x * sin(di) + y * cos(di);
 		return result;
@@ -93,7 +93,7 @@ struct Vector2
 
 	Vector2 getRotated(float fi) 
 	{
-		double di = fi * M_PI / 180;
+		float di = fi * M_PI / 180;
 		float k = x * cos(di) - y * sin(di);
 		y = x * sin(di) + y * cos(di);
 		x = k;
@@ -111,19 +111,5 @@ struct Vector2
 	}
 };
 
-const std::ostream& operator<<(std::ostream& stream, const Vector2& other) {
-	stream << other.x << " " << other.y;
-	return stream;
-}
-
-std::istream& operator>>(std::istream& stream, Vector2& other)
-{
-	stream >> other.x >> other.y;
-	return stream;
-}
-
-class Vector {
-
-};
 
 

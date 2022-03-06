@@ -1,4 +1,6 @@
 ﻿  GetFileWords.cpp
+  PrepareWord.cpp
   Source.cpp
   Generating Code...
-  ReadFileAndCountWords.vcxproj -> D:\PROJECTS INFA\ReadFileAndCountWords\x64\Debug\ReadFileAndCountWords.exe
+  LINK : D:\PROJECTS_INFA\HomeWork_3_sem\ReadFileAndCountWords\x64\Debug\ReadFileAndCountWords.exe not found or not built by the last incremental link; performing full link
+  ReadFileAndCountWords.vcxproj -> D:\PROJECTS_INFA\HomeWork_3_sem\ReadFileAndCountWords\x64\Debug\ReadFileAndCountWords.exe

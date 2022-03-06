@@ -1,1 +1,2 @@
 D:\PROJECTS INFA\ReadFileAndCountWords\x64\Debug\ReadFileAndCountWords.exe
+D:\PROJECTS_INFA\HomeWork_3_sem\ReadFileAndCountWords\x64\Debug\ReadFileAndCountWords.exe
