@@ -6,6 +6,14 @@
 #include <vector>
 using namespace std;
 
+struct Statistics {
+	int count;
+	string name;
+};
+
+bool compare_(const Statistics& lhs, const Statistics& rhs);
+
+
 class GetFileWords
 {
 	public:
@@ -23,10 +31,7 @@ class GetFileWords
 				wordmap[word]++;
 			}
 		}
-		struct Statistics {
-			int count;
-			string name;
-		};
+
 		vector<Statistics> s;
 		
 		Statistics elem;
@@ -35,15 +40,15 @@ class GetFileWords
 			elem.count = it -> second;
 			s.push_back(elem);
 		}
-		for (int it = 0; it < s.size() - 1; it++) {
-			for (int jt = 0; jt < s.size() - it - 1; jt++) {
-				if (s[jt].count >= s[jt+1].count) {
-					elem = s[jt];
-					s[jt] = s[jt+1];
-					s[jt+1] = elem;
-				}
-			}
+
+		for (const auto& [name, count] : wordmap) {
+			elem.name = name;
+			elem.count = count;
+			s.push_back(elem);
 		}
+
+		std::sort(s.begin(), s.end(), compare_);
+
 		for (int it = 0; it != s.size(); ++it) {
 			cout << s[it].name << " " << s[it].count << "\n";
 		}

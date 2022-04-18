@@ -17,6 +17,9 @@ int main()
   sf::Texture texture;
   texture.loadFromFile("D:/PROJECTS_INFA/HomeWork_3_sem/Game Project/bin/icon_test.png");
   sf::Sprite circle1(texture);
+  sf::CircleShape circle;
+  circle.setRadius(10);
+  circle.setFillColor(sf::Color::Black);
   circle1.setScale(4, 4);
   while (window.isOpen())
   {
@@ -53,24 +56,27 @@ int main()
         circle1.setPosition(prevX, prevY);
     }
     window.draw(circle1);
-
+    
     if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-        p.position = Vector2(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y);
-        p.velocity = Vector2(p.position.x - circle1.getPosition().x, p.position.y - circle1.getPosition().y).norm();
-        p.position = Vector2(circle1.getPosition().x, circle1.getPosition().y);
-        p.mass = 1.0f;
-        p.radius = 10;
-        p.circle.setRadius(p.radius);
-        p.circle.setPosition(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y);
-        particles.push_back(p);
+        
+            p.position = Vector2(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y);
+            p.velocity = Vector2(p.position.x - circle1.getPosition().x, p.position.y - circle1.getPosition().y).norm();
+            p.position = Vector2(circle1.getPosition().x, circle1.getPosition().y);
+            p.mass = 1.0f;
+            p.radius = 10;
+            p.circle.setRadius(p.radius);
+            p.circle.setPosition(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y);
+            particles.push_back(p);
+       
     }
 
     if (sf::Mouse::isButtonPressed(sf::Mouse::Right)) {
+        
         LaserBeam l;
         l.velocity = Vector2(sf::Mouse::getPosition(window).x - circle1.getPosition().x, sf::Mouse::getPosition(window).y - circle1.getPosition().y).norm();
         l.position = Vector2(circle1.getPosition().x, circle1.getPosition().y);
         l.mass = 1.0f;
-        l.rectangle.setSize(sf::Vector2f(140, 2));
+        l.rectangle.setSize(sf::Vector2f(100, 1));
         if ((sf::Mouse::getPosition(window).y - l.position.y) >= 0) {
             l.rectangle.rotate(acos((Vector2(1, 0) * l.velocity) / l.velocity.len()) * 180 / M_PI);
         }
@@ -99,7 +105,8 @@ int main()
             particles.erase(particles.begin() + i);
         }
     }
-
+    circle.setPosition(circle1.getPosition().x, circle1.getPosition().y);
+    window.draw(circle);
     window.display();
   }
 

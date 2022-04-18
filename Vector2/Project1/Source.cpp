@@ -95,6 +95,8 @@ int main() {
 				cin >> t;
 				cout << "a * " << t << " = " << a * t;
 				cout << "\n";
+				cout << t << " * a = " << t * a;
+				cout << "\n";
 				break;
 			}
 			case 6:
@@ -172,7 +174,7 @@ int main() {
 			{
 				cout << "a = " << a;
 				cout << "\n";
-				cout << "-a " << -a;
+				cout << "-a = " << -a;
 				cout << "\n";
 				break;
 			}

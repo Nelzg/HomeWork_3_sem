@@ -24,7 +24,8 @@ int main()
     texture.loadFromFile("D:/PROJECTS_INFA/HomeWork_3_sem/Game Project/bin/icon_test.png");
     sf::Sprite circle1(texture);
     circle1.setScale(4, 4);
-
+    int j = 0;
+    int i = 0;
     while (window.isOpen())
     {
 
@@ -36,7 +37,11 @@ int main()
         window.clear(sf::Color::Black);
 
         sf::Time time = clock.getElapsedTime();
-        int j = 0;
+        if (sf::Mouse::ButtonCount > 0) {
+            j = 0;
+            i = 0;
+        }
+        
         if ((sf::Mouse::isButtonPressed(sf::Mouse::Left)) && (j == 0)) {
             p.position = Vector2(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y);
             p.velocity = Vector2(0, 0);
@@ -47,9 +52,9 @@ int main()
             p.circle.setFillColor(sf::Color(255, 0, 0));
             p.circle.setPosition(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y);
             particles.push_back(p);
-            j++;
+            j = 1;
         }
-        if ((sf::Mouse::isButtonPressed(sf::Mouse::Right)) && (j == 0)) {
+        if ((sf::Mouse::isButtonPressed(sf::Mouse::Right)) && (i == 0)) {
             p.position = Vector2(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y);
             p.velocity = Vector2(0, 0);
             p.mass = -1.0f;
@@ -59,10 +64,8 @@ int main()
             p.circle.setFillColor(sf::Color(0, 0, 255));
             p.circle.setPosition(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y);
             particles.push_back(p);
-            j++;
+            i = 1;
         }
-        
-
 
         if (particles.size() != 0) {
             for (int k = 0; k < particles.size(); k++) {

@@ -66,7 +66,7 @@ struct Vector2
 
 	float operator^(const Vector2& other) const
 	{
-		return sqrt((x * other.y) * (x * other.y) + (y * other.x) * (x * other.y));
+		return ((x * other.y) * (x * other.y) + (y * other.x) * (x * other.y));
 	}
 	
 	Vector2 norm()
@@ -109,7 +109,23 @@ struct Vector2
 	{
 		return rotate(180);
 	}
+
+	
 };
 
+Vector2 operator*(float k, const Vector2& other) {
+	return Vector2(other.x * k, other.y * k);
+}
+
+const std::ostream& operator<<(std::ostream& stream, const Vector2& other) {
+	stream << other.x << " " << other.y;
+	return stream;
+}
+
+std::istream& operator>>(std::istream& stream, Vector2& other)
+{
+	stream >> other.x >> other.y;
+	return stream;
+}
 
 

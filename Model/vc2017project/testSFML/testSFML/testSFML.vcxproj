@@ -12,7 +12,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\main.cpp" />
-    <ClCompile Include="..\..\..\src\Vect.cpp" />
     <ClCompile Include="Ball.cpp" />
   </ItemGroup>
   <ItemGroup>
